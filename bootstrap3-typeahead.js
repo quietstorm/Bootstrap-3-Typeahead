@@ -553,6 +553,10 @@
 
     blur: function (e) {
       if (!this.mousedover && !this.mouseddown && this.shown) {
+        if(e.relatedTarget){
+          this.$menu.find('.active').removeClass('active');
+          $(e.relatedTarget).parents('.dropdown-menu li').addClass('active');
+        }
         this.select();
         this.hide();
         this.focused = false;
