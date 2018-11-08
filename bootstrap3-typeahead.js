@@ -191,6 +191,8 @@
     },
 
     lookup: function (query) {
+      this.$element.trigger('typeahead:lookup');
+
       var items;
       if (typeof(query) != 'undefined' && query !== null) {
         this.query = query;
